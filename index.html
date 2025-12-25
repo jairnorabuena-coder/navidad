@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Balita Wayne 🦇</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f5f5f5, #1f1f1f);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 14px 22px;
+      border: none;
+      border-radius: 25px;
+      background: #ffffff;
+      color: #000;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Hola, soy Batman 🦇</h1>
+
+    <p>
+      Hice esto por que soy Batman,<br>
+      con el mejor intelecto.<br>
+      Y es uno de los regalos,<br>
+      espero lo leas!.
+    </p>
+
+    <button onclick="abrirLibro()">Abre tu segunda sorpresa!</button>
+
+    <div id="mensajeLibro" class="hidden">
+      <p>
+        📖“La verdadera pregunta nunca fue quién lo mató,.<br>
+        sino todo lo que lo llevó hasta ahí.”📖.
+      </p>
+
+      <button onclick="descargarLibro()">Descargalo aquí!</button>
+    </div>
+
+    <div id="mensajeImagen" class="hidden">
+      <p>
+        🪨 Piedra a piedra:<br>
+        Mi trabajo interno, mis decisiones 🪨.
+      </p>
+
+      <button onclick="verImagen()">Míralo aquí!</button>
+    </div>
+  </div>
+
+  <script>
+    function abrirLibro() {
+      window.open("librito.pdf", "_blank");
+      document.getElementById("mensajeLibro").classList.remove("hidden");
+    }
+
+    function descargarLibro() {
+      const link = document.createElement("a");
+      link.href = "librito.pdf";
+      link.download = "Para_ti.pdf";
+      link.click();
+      document.getElementById("mensajeImagen").classList.remove("hidden");
+    }
+
+    function verImagen() {
+      window.open("tatuaje.png", "_blank");
+    }
+  </script>
+</body>
+</html>
