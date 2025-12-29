@@ -100,9 +100,14 @@
 
   <script>
     function abrirLibro() {
-      window.open("librito.pdf", "_blank");
+      const music = document.getElementById("bgMusic");
+      music.volume = 0.3; // volumen suave
+      music.play();
+    
+      window.open("libro.pdf", "_blank");
       document.getElementById("mensajeLibro").classList.remove("hidden");
     }
+
 
     function descargarLibro() {
       const link = document.createElement("a");
@@ -116,7 +121,11 @@
       window.open("tatuaje.png", "_blank");
     }
   </script>
+  <audio id="bgMusic" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>
+
 
 
